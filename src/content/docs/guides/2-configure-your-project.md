@@ -1,0 +1,43 @@
+---
+coverY: 0
+title: "2. Configure your project"
+---
+
+Your entire project is configured with a single configuration file, `config.js`. Copy the existing `config.example.js` file to `config.js`, and edit it for your project.
+
+```
+cp config.example.js config.js
+```
+
+A sample `config.js`:
+
+```javascript
+  module.exports = {
+  //// ACCOUNT INFO ////
+  // The account seed phrase to use for deployment
+  mnemonic:
+    'enlist hip relief stomach skate base shallow young switch frequent cry park',
+  // Your STARS address
+  account: 'stars1...',
+
+  //// COLLECTION INFO ////
+  // The name of your collection
+  name: 'Collection Name',
+  // The 3-7 letter ticker symbol for your collection
+  symbol: 'SYM',
+  // Project description
+  description: 'An awesome NFT series',
+  // Path to image to use as the main image for the collection
+  image: 'images/1.png',
+...
+```
+
+Minimum Mint Price: `50 stars`
+
+Collection Creation Fee: `1000 stars`
+
+`` Max Number of Tokens: `10000` ``
+
+{% hint style="info" %}
+`All times are set to UTC. Ex: 3pm EST 3/25/2022 => "2022-03-25T19:00:00.000Z"`
+{% endhint %}

@@ -1,0 +1,14 @@
+---
+coverY: 0
+title: "7. Query contract"
+---
+
+You can query the current state of your contract to verify if everything worked. The easiest way to do this is via the REPL.
+
+If you have properly set your minter contract address in the config file, you can load and query it from the REPL using:
+
+```
+yarn query
+```
+
+The console will display config settings for `minter` and derive `sg721, whitelist` contracts from `minter` contract.

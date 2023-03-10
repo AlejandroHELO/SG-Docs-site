@@ -1,0 +1,35 @@
+---
+import type { MarkdownHeading } from "astro";
+import TableOfContents from "./TableOfContents";
+import MoreMenu from "./MoreMenu.astro";
+
+type Props = {
+  headings: MarkdownHeading[];
+  githubEditUrl: string;
+};
+
+const { headings, githubEditUrl } = Astro.props;
+---
+
+<nav class="w-full h-max text-sm" aria-labelledby="grid-right">
+  <div class="flex flex-col h-max gap-4">
+    <TableOfContents client:media="(min-width: 50em)" headings={headings} />
+    <MoreMenu editHref={githubEditUrl} />
+  </div>
+</nav>
+
+<style>
+  /* .sidebar-nav {
+    display: flex;
+    position: fixed;
+    width: 100%;
+    padding: 0 1rem;
+  } */
+
+  /* .sidebar-nav-inner {
+    height: 100%;
+    padding: 0;
+    padding-top: var(--doc-padding);
+    overflow: auto;
+  } */
+</style>

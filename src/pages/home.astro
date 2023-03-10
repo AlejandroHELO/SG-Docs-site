@@ -1,0 +1,146 @@
+---
+import HomeLayout from "../layouts/HomeLayout.astro";
+import { HomeCard } from "../components/HomeCard";
+import RightArrow from "../../public/rightArrow.astro";
+const post = Astro.props;
+const { headings } = post;
+---
+
+<HomeLayout headings={headings} {...post.data}>
+  <div class="flex w-full justify-center">
+    <img class="w-banner-width" src="/sg-text-logo-1.png" alt="" />
+  </div>
+
+  <div class="px-home-layout-px w-full flex-col mb-8">
+    <h3>Stargaze Docs</h3>
+    <span
+      >Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolores nam
+      iste officia dolorem iure temporibus distinctio ut incidunt inventore.
+      Temporibus harum sit, nemo animi repudiandae iste est voluptatum quo
+      pariatur.</span
+    >
+    <div class="flex justify-end">
+      <a
+        href="/introduction"
+        class="flex justify-center h-10 w-28 border-2 border-pink-600 text-white font-semibold rounded-xl hover:no-underline hover:bg-pink-600"
+        >Get started!</a
+      >
+    </div>
+  </div>
+
+  <div class="px-home-layout-px">
+    <h3>Explore and learn about the ecosystem</h3>
+    <div class="flex flex-wrap w-full justify-evenly">
+      <HomeCard
+        link="/stargaze-studio/stargaze-studio"
+        imgClass=" w-20"
+        icon="/paint-app.svg"
+        title="Stargaze Studio"
+        text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus culpa excepturi pariatur commodi. Odio nihil debitis nam, cumque quas dolorum, at earum autem ullam facere, incidunt quo saepe nisi tempora."
+      />
+      <HomeCard
+        link="/introduction"
+        imgClass=" w-20"
+        icon="/image-files-and-folders.svg"
+        title="Mint an NFT"
+        text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus culpa excepturi pariatur commodi. Odio nihil debitis nam, cumque quas dolorum, at earum autem ullam facere, incidunt quo saepe nisi tempora."
+      />
+      <HomeCard
+        link="/creators/collection-guidelines"
+        imgClass=" w-20"
+        icon="/presentation-ui.svg"
+        title="Creators"
+        text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus culpa excepturi pariatur commodi. Odio nihil debitis nam, cumque quas dolorum, at earum autem ullam facere, incidunt quo saepe nisi tempora."
+      />
+      <HomeCard
+        link="/developers/cosmwasm-smart-contracts"
+        imgClass=" w-24"
+        icon="/cloud-data-developer.svg"
+        title="Developers"
+        text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus culpa excepturi pariatur commodi. Odio nihil debitis nam, cumque quas dolorum, at earum autem ullam facere, incidunt quo saepe nisi tempora."
+      />
+      <HomeCard
+        link="/names/mint"
+        imgClass=" w-80"
+        icon="/names.svg"
+        title={null}
+        text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus culpa excepturi pariatur commodi. Odio nihil debitis nam, cumque quas dolorum, at earum autem ullam facere, incidunt quo saepe nisi tempora."
+      />
+      <HomeCard
+        link="/governance/protocol-governance"
+        imgClass=" w-20"
+        icon="/student-organization.svg"
+        title="Governance"
+        text="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus culpa excepturi pariatur commodi. Odio nihil debitis nam, cumque quas dolorum, at earum autem ullam facere, incidunt quo saepe nisi tempora."
+      />
+    </div>
+    <div class="flex justify-end">
+      <a
+        href="/introduction"
+        class="flex justify-center h-10 w-32 border-2 border-pink-600 text-white font-semibold rounded-xl hover:no-underline hover:bg-pink-600"
+        >All topics <RightArrow strokeColor="#FFFFFF" />
+      </a>
+    </div>
+  </div>
+
+  <div class="flex flex-col justify-center px-28 text-center my-4">
+    <h3 class="w-full my-4">Join our community 🌎✨🔭</h3>
+    <span class="my-4 font-medium"
+      >Stargaze is by and for the community, we love to keep in touch with you
+      and listen to your ideas. Here are a few ways you can connect with us and
+      other Stargaze community members.
+    </span>
+    <div class="flex justify-center items-center gap-4 my-4">
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://discord.gg/stargaze"
+      >
+        <img
+          class="w-12 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300"
+          src="/community-discord-icon.svg"
+          alt=""
+        />
+      </a>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://twitter.com/StargazeZone?s=20"
+      >
+        <img
+          class="w-12 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300"
+          src="/community-twitter-icon.svg"
+          alt=""
+        />
+      </a>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://t.me/stargazezone"
+      >
+        <img
+          class="w-12 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300"
+          src="/community-telegram-icon.svg"
+          alt=""
+        />
+      </a>
+      <a
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://mirror.xyz/stargazezone.eth"
+      >
+        <img
+          class="w-12 transition ease-in-out delay-75 hover:-translate-y-1 hover:scale-110 duration-300"
+          src="/community-chat-circle-icon.svg"
+          alt=""
+        />
+      </a>
+    </div>
+  </div>
+</HomeLayout>
+
+<!-- <style>
+  .card {
+    transform: scale(1);
+  }
+</style> -->

@@ -1,0 +1,7 @@
+---
+coverY: 0
+---
+
+# 1a. Need help?
+
+We want creators to have a great experience. Join (stargaze discord)\[discord.gg/stargaze], give yourself the developer role in the \`pick-a-role\` channel, and ask questions in the `stargaze-tools` channel.

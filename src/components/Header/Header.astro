@@ -1,0 +1,101 @@
+---
+import { getLanguageFromURL, KNOWN_LANGUAGE_CODES } from "../../languages";
+import { SITE } from "../../consts";
+import StargazeLogo from "./StargazeLogo.astro";
+import SkipToContent from "./SkipToContent.astro";
+import SidebarToggle from "./SidebarToggle";
+import LanguageSelect from "./LanguageSelect";
+import Search from "./Search";
+import star from "/icon.svg";
+import githubIcon from "/github-svgrepo-com.svg";
+import discordIcon from "/discord-outline-svgrepo-com.svg";
+
+type Props = {
+  currentPage: string;
+};
+
+const { currentPage } = Astro.props;
+const lang = getLanguageFromURL(currentPage);
+---
+
+<header
+  class="fixed flex top-0 w-full h-theme-navbar-height bg-theme-navbar-bg overflow-hidden"
+>
+  <!-- <SkipToContent /> -->
+  <nav class="flex items-center justify-between w-full px-4">
+    <!-- <div class="menu-toggle">
+			<SidebarToggle client:idle />
+		</div> -->
+    <div class="px-4 h-theme-navbar-height" title="Home Docs">
+      <a href="/home" class="no-underline">
+        <StargazeLogo width={180} height={96} />
+      </a>
+    </div>
+    <!-- {KNOWN_LANGUAGE_CODES.length > 1 && <LanguageSelect lang={lang} client:idle />} -->
+    <div class="flex items-center">
+      <div class="flex items-center">
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center mr-4"
+          href="https://www.stargaze.zone/"
+          title="Stargaze zone"
+          ><img
+            id="StarIcon"
+            src={star}
+            alt="Star Icon"
+            class="w-12 opacity-80 hover:opacity-100 hover:animate-spin"
+          /></a
+        >
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center mr-4"
+          href="https://github.com/public-awesome/galaxy"
+          ><img class="w-8" src={githubIcon} alt="Github icon" /></a
+        >
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          class="flex items-center mr-4"
+          href="https://discord.gg/stargaze"
+          ><img class="w-9" src={discordIcon} alt="Discord icon" /></a
+        >
+      </div>
+      <div id="search-item" class="relative w-52 lg:w-80">
+        <Search client:idle />
+      </div>
+    </div>
+  </nav>
+</header>
+
+<style>
+  @media (max-width: 1000px) {
+    /* header {
+			position: static;
+			padding: 2rem 0rem;
+		}
+
+		.logo {
+			width: auto;
+			margin: 0;
+			z-index: 0;
+		}
+
+		.menu-toggle {
+			display: none;
+		} */
+  }
+
+  /** Style Algolia */
+  :root {
+    --docsearch-primary-color: var(--theme-accent);
+    --docsearch-logo-color: var(--theme-text);
+  }
+</style>
+
+<style is:global>
+  #search-item > * {
+    flex-grow: 1;
+  }
+</style>
