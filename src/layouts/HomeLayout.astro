@@ -11,7 +11,6 @@ type Props = CollectionEntry<"docs">["data"] & {
   headings: MarkdownHeading[];
 };
 const { ...data } = Astro.props;
-// console.log("SOY EL ASTRO: ", Astro);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const currentPage = Astro.url.pathname.split("/").join("");
 const currentFile = ` `;

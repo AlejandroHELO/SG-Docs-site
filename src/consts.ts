@@ -162,7 +162,7 @@ export const SIDEBAR: Sidebar = {
   ],
   Extras: [
     { text: "Airdrop FAQ", link: "/extras/airdrop-faq" },
-    { text: "Glosary", link: "/" },
+    { text: "Glossary", link: "/" },
     { text: "Stargaze Assets", link: "/extras/stargaze-assets" },
   ],
 };
